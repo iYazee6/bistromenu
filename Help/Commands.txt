@@ -1,0 +1,46 @@
+https://start.spring.io/
+
+Spring Web (for REST APIs)
+Spring Boot Security (for authentication)
+Spring Data JPA (for PostgreSQL integration)
+PostgreSQL Driver (for database connection)
+Lombok (for reducing boilerplate code)
+
+
+
+
+Commands 
+
+
+CMD Docker PostgreSQL 
+docker pull postgres
+
+
+CMD Docker create container for PostgreSQL 
+docker run --name mypostgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=P@ssw0rd -e POSTGRES_DB=bistromenu -p 5432:5432 -d postgres
+
+
+CMD test port of db is open locally 
+netstat -an | findstr 5432
+
+
+
+CMD VSCode: Maven Build project (Targets folder can be deleted):
+mvn clean package
+mvn clean package -DskipTests
+mvn clean package -U
+mvn clean install
+
+
+CMD VSCode: Maven run the project
+http://localhost:9898/hello
+mvn spring-boot:run
+
+
+
+
+
+docker -v
+mvn -version
+gradle -v
+
