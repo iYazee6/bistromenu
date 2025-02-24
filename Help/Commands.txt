@@ -44,3 +44,9 @@ docker -v
 mvn -version
 gradle -v
 
+
+
+
+
+git config --global user.name "Yazeed"
+git config --global user.email "iyazee6@gmail.com"
