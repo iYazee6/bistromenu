@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavigationBar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Map from './pages/Map';
+import Home from './pages/Home';
 
 import { Button, Container } from 'react-bootstrap';
 
@@ -18,38 +18,24 @@ function App() {
       <Router>
         <NavigationBar />
         <Routes>
-          <Route path="/" element={<h2>Home Page</h2>} />
-          <Route path="/menu" element={<h2>Menu Page</h2>} />
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/menu" element={<h2>Menu Page</h2>} /> */}
+          <Route path="/Map" element={<Map />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
 
-      <Container className="mt-5">
-        <h1>Welcome to Bistro Menu</h1>
-        <Button variant="primary">Click Me</Button>
+      <Container className="text-center mt-4">
+        <div className="row">
+          <h1>Welcome to Bistro Menu</h1>
+        </div>
+
+        
+
+        <div className='footer'></div>
       </Container>
 
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }

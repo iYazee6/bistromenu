@@ -1,8 +1,11 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem; */
   text-align: center;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .logo {
@@ -39,4 +42,43 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+
+
+/* Custom Theme for Bistro Menu */
+
+nav.bg-dark
+{
+  background-color: #111216 !important;
+}
+
+
+
+@media (min-width: 768px) {
+
+  nav .active.nav-link
+  {
+    background-color: #F4CBDF;
+    /* background-position: right top; */
+    color: #18191C !important;
+    border-radius: 0px 0px 8px 8px;
+    /* padding: 8px 12px; */
+    margin-top: -8px;
+
+    align-items: flex-end !important; 
+    justify-content: center;
+    position: relative;
+
+  }
+
+  nav .nav-link
+  {
+    color: #ffffff !important;
+  }
+
+
+
+
 }
