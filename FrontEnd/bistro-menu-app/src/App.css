@@ -57,7 +57,9 @@ nav.bg-dark
 
 
 @media (min-width: 768px) {
+  /* .container nav {
 
+  } */
   nav .active.nav-link
   {
     background-color: #F4CBDF;
@@ -76,6 +78,15 @@ nav.bg-dark
   nav .nav-link
   {
     color: #ffffff !important;
+  }
+
+  nav 
+  {
+    
+    border-radius: 0px 0px 15px 0px;
+    margin-right: 10px;
+    /* margin-bottom: -10px;
+    min-height: 150px; */
   }
 
 
