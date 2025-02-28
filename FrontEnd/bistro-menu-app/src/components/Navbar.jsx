@@ -16,10 +16,10 @@ function NavigationBar() {
     };
 
     return (
-        <div className='container-fluid px-0'>
-            <div className='col-md-10 col-xl-11'>
-                <Navbar bg="dark" variant="dark" expand="lg">
-                    <Container>
+        <div className='d-flex'>
+            <div className='nav-container col-md-10 col-lg-11 text-center h-100'>
+                <Navbar bg="dark" variant="dark" expand="lg" className="h-100">
+                    <Container fluid>
                         <Navbar.Brand as={Link} to="/">Bistro Menu</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
@@ -34,16 +34,19 @@ function NavigationBar() {
                     </Container>
                 </Navbar>
             </div>
-            <div className='col-md-2 col-xl-1 d-block d-sm-none'>
+
+            <div className="theme-toggle-container col-md-2 col-lg-1">
                 <Form.Check
                     type="switch"
                     id="theme-switch"
-                    label={theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+                    label=""
                     checked={theme === "dark"}
                     onChange={toggleTheme}
-                    className="ms-3"
+                    className="theme-switch"
                 />
+                <span className="theme-label">{theme === "light" ? "🌙" : "☀️"}</span>
             </div>
+
         </div>
     );
 }

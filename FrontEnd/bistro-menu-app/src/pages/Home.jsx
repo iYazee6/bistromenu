@@ -1,6 +1,31 @@
+
+import { useState, useEffect } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
+import api from "../utils/api";
 
 function Home() {
+    const [menuItems, setMenuItems] = useState([]); // Store API response
+    const [loading, setLoading] = useState(true); // Track loading state
+    const [error, setError] = useState(null); // Handle errors
+
+    useEffect(() => {
+        const fetchMenu = async () => {
+          try {
+            const response = await api.get("/api/menu/menuExrestaurant");
+    
+            // Ensure data is an array before setting state
+            setMenuItems(Array.isArray(response.data) ? response.data : []);
+            setLoading(false);
+          } catch (err) {
+            setError("Failed to fetch menu. Please try again.");
+            setLoading(false);
+          }
+        };
+    
+        fetchMenu();
+      }, []);
+
+
     return (
         <Container className="mt-1">
             <Form>
@@ -19,11 +44,26 @@ function Home() {
                 </div>
             </Form>
             <div className='row'>
-
-
-
-
                 <h2>Home Page</h2>
+
+                {loading && <p>Loading menu...</p>}
+                {error && <p className="text-danger">{error}</p>}
+
+                <div className="row">
+                    {menuItems.map((item) => (
+                        <div key={item.id} className="col-md-4 mb-4">
+                            <div className="card shadow-sm">
+                                <div className="card-body">
+                                    <h5 className="card-title">{item.name}</h5>
+                                    <p className="card-text">{item.description}</p>
+                                    <p className="fw-bold">${item.price}</p>
+                                    <button className="btn btn-primary">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
             </div>
 
 

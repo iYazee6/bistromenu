@@ -90,6 +90,31 @@ nav.bg-dark
   }
 
 
+.nav-container {
+  border-radius: 0px 0px 15px 0px;
+  margin-right: 10px;
+}
+
+.theme-toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  /* background-color: #343a40;  */
+  border-radius: 0px 0px 15px 15px;
+  margin-left: 5px;
+}
+
+.theme-switch {
+  transform: rotate(270deg); 
+}
+
+.theme-label {
+  margin-top: 5px;
+  color: white;
+  font-size: 14px;
+}
 
 
 }
