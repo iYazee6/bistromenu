@@ -46,7 +46,7 @@ public class SecurityConfig {
                         .requestMatchers("/auth/**").permitAll() // Allow login & register API
                         .requestMatchers("/public/**").permitAll() // Allow public APIs
                         .requestMatchers("/api/menu/menuExrestaurant").permitAll() // ✅ Publicly accessible API
-                        .requestMatchers("/api/menu/byRestaurant/**").authenticated() // 🔒 Requires authentication
+                        // .requestMatchers("/api/menu/byRestaurant/**").authenticated() // 🔒 Requires authentication
                         // .anyRequest().authenticated() // Secure other endpoints
                         .anyRequest().denyAll() // ⛔ Deny all other requests by default
                 )

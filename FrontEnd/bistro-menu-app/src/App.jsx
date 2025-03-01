@@ -27,9 +27,9 @@ function App() {
       </Router>
 
       <Container className="text-center mt-4">
-        <div className="row">
+        {/* <div className="row">
           <h1>Welcome to Bistro Menu</h1>
-        </div>
+        </div> */}
 
         
 

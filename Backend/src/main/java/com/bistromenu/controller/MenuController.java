@@ -21,13 +21,14 @@ public class MenuController {
     // ✅ Publicly accessible method (no authentication required)
     @GetMapping("/menuExrestaurant")
     public List<Menu> getMenuByRestaurant() {
-        return menuService.getMenuByRestaurant();
+        // return menuService.getMenuByRestaurant();
+        return menuService.getAllMenuItems();
     }
 
-    // ✅ Protected method (requires authentication)
-    @GetMapping("/byRestaurant/{restaurantId}")
-    @PreAuthorize("isAuthenticated()")  // 🔒 Requires authentication
-    public List<Menu> getMenuByRestaurantId(@PathVariable Long restaurantId) {
-        return menuService.getMenuByRestaurantId(restaurantId);
-    }
+    // // ✅ Protected method (requires authentication)
+    // @GetMapping("/byRestaurant/{restaurantId}")
+    // @PreAuthorize("isAuthenticated()")  // 🔒 Requires authentication
+    // public List<Menu> getMenuByRestaurantId(@PathVariable Long restaurantId) {
+    //     return menuService.getMenuByRestaurantId(restaurantId);
+    // }
 }

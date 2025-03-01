@@ -9,36 +9,46 @@ Lombok (for reducing boilerplate code)
 
 
 
-Commands 
+Commands:-
 
-
-CMD Docker PostgreSQL 
+# CMD Docker PostgreSQL 
 docker pull postgres
 
 
-CMD Docker create container for PostgreSQL 
+# CMD Docker create container for PostgreSQL 
 docker run --name mypostgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=P@ssw0rd -e POSTGRES_DB=bistromenu -p 5432:5432 -d postgres
 
 
-CMD test port of db is open locally 
+# CMD test port of db is open locally 
 netstat -an | findstr 5432
 
 
-
-CMD VSCode: Maven Build project (Targets folder can be deleted):
+# CMD VSCode: Maven Build project (Targets folder can be deleted):
 mvn clean package
 mvn clean package -DskipTests
 mvn clean package -U
 mvn clean install
 
 
-CMD VSCode: Maven run the project
-http://localhost:9898/hello
+# CMD VSCode: Maven run the project ( http://localhost:9898/hello )
 mvn spring-boot:run
+mvn clean spring-boot:run
 
 
+# React create template project:
+npm create vite@latest bistro-menu-app -- --template react
+
+#- React install bootstrap for react:
+npm install react-bootstrap bootstrap
+#- React install React router for navbar
+npm install react-router-dom
+
+# React run project for development [Before running make sure you run (npm install)]
+cd /frontend/
+npm run dev
 
 
+# 
 
 docker -v
 mvn -version
