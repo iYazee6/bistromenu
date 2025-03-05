@@ -43,6 +43,9 @@ npm install react-bootstrap bootstrap
 #- React install React router for navbar
 npm install react-router-dom
 
+
+npm install react-icons --save
+
 # React run project for development [Before running make sure you run (npm install)]
 cd /frontend/
 npm run dev
