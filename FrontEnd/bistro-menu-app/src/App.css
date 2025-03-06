@@ -103,8 +103,13 @@ nav.bg-dark {
   background-color: #2A2C2D !important;
   color: #FCEFF5 !important;
   border-color:  #FCEFF5 !important;
-  
-  /* border-radius: ; */
+  /* border: 1rem !important;
+  border-radius: ; */
+}
+
+:root[data-bs-theme="light"] .btn-rfcart, :root[data-bs-theme="light"] .btn-atcart
+{
+  border: 0 !important;
 }
 
 :root[data-bs-theme="dark"] input.form-control, :root[data-bs-theme="dark"] .search-filter

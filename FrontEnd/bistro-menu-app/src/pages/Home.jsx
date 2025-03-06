@@ -67,8 +67,8 @@ function Home() {
 
         // Ensure filtering doesn't break if name or description is null
         const filtered = menuItems.filter((item) =>
-            // (item.name?.toLowerCase().includes(query) || item.description?.toLowerCase().includes(query))
-            (item.itemName?.toLowerCase().includes(query))
+            (item.name?.toLowerCase().includes(query) || item.description?.toLowerCase().includes(query))
+            // (item.itemName?.toLowerCase().includes(query))
         );
 
         setFilteredItems(filtered);
@@ -216,11 +216,11 @@ function Home() {
                                                 <div className="d-flex align-items-center justify-content-between w-100">
                                                     <span className="fw-bold my-0 mx-2">{item.price} SR</span>
                                                     <div className='align-self-end'>
-                                                        <button className="btn btn-danger bg-theme border-0 btn-sm me-2 btn-rfcart" onClick={() => removeFromCart(item)}>
+                                                        <button className="btn btn-danger bg-theme btn-sm me-2 btn-rfcart" onClick={() => removeFromCart(item)}>
                                                             <FaMinus />
                                                         </button>
                                                         <span className="cart-quantity">{cart[item.id] || 0}</span>
-                                                        <button className="btn btn-success bg-theme border-0 btn-sm ms-2 btn-atcart" onClick={() => addToCart(item)}>
+                                                        <button className="btn btn-success bg-theme btn-sm ms-2 btn-atcart" onClick={() => addToCart(item)}>
                                                             <FaPlus />
                                                         </button>
                                                     </div>
