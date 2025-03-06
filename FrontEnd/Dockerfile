@@ -1,24 +1,34 @@
-# Use Node.js as the base image
-FROM node:20-alpine
+# Stage 1: Build the Vite React App
+FROM node:20-alpine AS builder
 
-# Set working directory
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy package.json and install dependencies
-COPY package.json package-lock.json ./
-RUN npm install --production
+# Copy package.json and package-lock.json to install dependencies first (better caching)
+COPY bistro-menu-app/package.json bistro-menu-app/package-lock.json ./
 
-# Copy the rest of the application
-COPY . .
+# Install dependencies
+RUN npm install
 
-# Build the React app
+# Copy the rest of the application files
+COPY bistro-menu-app .
+
+# Build the Vite app
 RUN npm run build
 
-# Use Nginx to serve the build
-FROM nginx:alpine
-COPY --from=0 /app/build /usr/share/nginx/html
+# Stage 2: Serve the built app with Nginx
+FROM nginx:alpine AS runner
 
-# Expose the default Nginx port
+# Set working directory
+WORKDIR /usr/share/nginx/html
+
+# Remove default Nginx files
+RUN rm -rf ./*
+
+# Copy built files from the builder stage
+COPY --from=builder /app/dist .
+
+# Expose port 80
 EXPOSE 80
 
 # Start Nginx
