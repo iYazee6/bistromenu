@@ -15,22 +15,27 @@ services:
       - "5432:5432"
 
   backend:
-    build: ./backend
+    build: 
+      context: ./Backend
+      dockerfile: Dockerfile
     container_name: bistro_backend
-    restart: always
+    restart: unless-stopped
     depends_on:
       - postgres
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/bistromenu
       SPRING_DATASOURCE_USERNAME: appuser
       SPRING_DATASOURCE_PASSWORD: P@ssw0rd
+      SPRING_PROFILES_ACTIVE: prod
     ports:
       - "8080:8080"
 
   frontend:
-    build: ./frontend
+    build: 
+      context: ./FrontEnd
+      dockerfile: Dockerfile
     container_name: bistro_frontend
-    restart: always
+    restart: unless-stopped
     depends_on:
       - backend
     ports:
