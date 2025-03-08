@@ -65,3 +65,18 @@ gradle -v
 
 git config --global user.name "Yazeed"
 git config --global user.email "iyazee6@gmail.com"
+
+
+
+# Docker, Updating an image after updating the code example of Updating the DB
+docker compose stop postgres
+docker compose rm -f postgres
+
+docker compose up -d --build postgres
+
+
+docker logs bistrodb
+
+
+
+docker ps 

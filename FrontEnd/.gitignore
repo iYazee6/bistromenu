@@ -53,3 +53,6 @@ coverage/
 *.swp
 *.swo
 *.bak
+
+node_modules/
+bistro-menu-app/node_modules/
