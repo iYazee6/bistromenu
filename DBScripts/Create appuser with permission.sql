@@ -1,10 +1,10 @@
 
 
 
-create user appuser with password 'P@ssw0rd';
+-- create user appuser with password 'P@ssw0rd';
 
-grant all privileges on database bistromenu to appuser;
-ALTER ROLE appuser SUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN NOREPLICATION NOBYPASSRLS;
+-- grant all privileges on database bistromenu to appuser;
+-- ALTER ROLE appuser SUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN NOREPLICATION NOBYPASSRLS;
 
 
 CREATE TABLE public.users (
