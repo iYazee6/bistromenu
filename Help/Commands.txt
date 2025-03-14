@@ -71,8 +71,15 @@ git config --global user.email "iyazee6@gmail.com"
 # Docker, Updating an image after updating the code example of Updating the DB
 docker compose stop postgres
 docker compose rm -f postgres
-
 docker compose up -d --build postgres
+
+docker compose stop backend
+docker compose rm -f backend
+docker compose up -d --build backend
+
+docker compose stop frontend
+docker compose rm -f frontend
+docker compose up -d --build frontend
 
 
 docker logs bistrodb
@@ -80,3 +87,6 @@ docker logs bistrodb
 
 
 docker ps 
+docker ps -a
+
+docker restart bistro_backend bistro_frontend

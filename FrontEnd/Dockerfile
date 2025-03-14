@@ -29,7 +29,7 @@ RUN rm -rf ./*
 COPY --from=builder /app/dist .
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 3000
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
